@@ -25,12 +25,12 @@ export const cart: Reducer<CartState> = (state = INITIAL_STATE, action) => {
             quantity: 1
           })
         }
-  
         
         break;
       case ActionTypes.addProductToCartFailure:
         draft.failedStockCheck.push(action.payload.productId);
         break;
+
       default:
         return draft;
     };

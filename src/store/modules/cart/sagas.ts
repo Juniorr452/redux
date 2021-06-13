@@ -12,7 +12,7 @@ interface StockResponse {
 
 type CheckProductStockRequest = ReturnType<typeof addProductToCartRequest>
 
-function* checkProductStock(action: CheckProductStockRequest): any {
+export function* checkProductStock(action: CheckProductStockRequest): any {
   const { product } = action.payload;
 
   const currentQuantity: number = yield select((state: State) => {
@@ -26,8 +26,6 @@ function* checkProductStock(action: CheckProductStockRequest): any {
   } else {
     yield put(addProductToCartFailure(product.id))
   }
-
-  console.log(currentQuantity)
 }
 
 export default all([
