@@ -3,8 +3,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { CartState } from "./modules/cart/types";
 
 import createSagaMiddleware from 'redux-saga';
-import rootReducer from "./modules/rootReducer";
 import rootSaga from "./modules/rootSaga";
+import rootReducer from "./ducks";
 
 export interface State {
   cart: CartState;
